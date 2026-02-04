@@ -1,6 +1,6 @@
 ---
 name: dep-check-plus
-description: Auditoría avanzada de dependencias
+description: Auditoría avanzada de dependencias con generación de métricas externas
 ---
 
 # Dep Check Plus
@@ -77,6 +77,7 @@ jq -n \
   '{
     dependencies: $deps[0],
     envSurfaceDetected: ($env | length > 0),
+    envSurfaceDetailed: $env,
     executionTimestamp: now
   }' > reports/final-report.json
 ```
